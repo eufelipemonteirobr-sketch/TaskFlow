@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow - Lista de Tarefas</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>TaskFlow</h1>
+        <p>Organize suas tarefas e seja produtivo.</p>
+      </header>
+
+      <section class="task-form">
+        <form id="form-tarefa">
+          <input
+            type="text"
+            id="input-tarefa"
+            placeholder="Digite uma tarefa..."
+          />
+          <button type="submit">Adicionar</button>
+        </form>
+      </section>
+      <div class="filtros">
+        <button id="filtro-todas">Todas</button>
+        <button id="filtro-pendentes">Pendentes</button>
+        <button id="filtro-concluidas">Concluídas</button>
+      </div>
+      <button id="limpar-tarefas">Limpar Todas as Tarefas</button>
+
+       <section class="task-list">
+          <h2>Minhas tarefas</h2>
+
+          <div
+            class="contadores"
+            style="display: flex; gap: 15px; margin-bottom: 15px"
+          >
+            <p>Total: <span id="total-tarefas">0</span></p>
+            <p>Pendentes: <span id="tarefas-pendentes">0</span></p>
+            <p>Concluídas: <span id="tarefas-concluidas">0</span></p>
+          </div>
+
+          <ul id="lista-tarefas"></ul>
+        </section>
+
+        <ul id="lista-tarefas"></ul>
+      </section>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

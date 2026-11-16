@@ -1,0 +1,235 @@
+/* ----------------------------------
+   1. Configurações Globais e Variáveis
+   ---------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ----------------------------------
+   2. Cabeçalho (Header)
+   ---------------------------------- */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #2563eb;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #64748b;
+}
+
+/* ----------------------------------
+   3. Formulário de Cadastro
+   ---------------------------------- */
+.task-form form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  font-size: 16px;
+  min-width: 0;
+}
+
+.task-form input:focus {
+  border-color: #2563eb;
+}
+
+.task-form button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.task-form button:hover {
+  background-color: #1d4ed8;
+}
+
+/* ----------------------------------
+   4. Seção de Filtros e Ações Gerais
+   ---------------------------------- */
+.filtros {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.filtros button {
+  flex: 1;
+  background-color: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.filtros button:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+#limpar-tarefas {
+  width: 100%;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  transition: background 0.2s ease;
+}
+
+#limpar-tarefas:hover {
+  background-color: #dc2626;
+}
+
+/* ----------------------------------
+   5. Painel de Contadores
+   ---------------------------------- */
+.contadores {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8fafc;
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.contadores span {
+  font-weight: bold;
+  color: #1e293b;
+}
+
+/* ----------------------------------
+   6. Lista de Tarefas (DOM Dinâmico)
+   ---------------------------------- */
+.task-list h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+#lista-tarefas {
+  list-style: none;
+}
+
+#lista-tarefas li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+#lista-tarefas li span {
+  flex: 1;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+/* Estilo para os botões internos de cada linha de tarefa */
+#lista-tarefas li button {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  background-color: white;
+  color: #334155;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#lista-tarefas li button:hover {
+  background-color: #f1f5f9;
+}
+
+/* Destaque para o botão excluir de cada linha */
+#lista-tarefas li button:last-child:hover {
+  background-color: #fee2e2;
+  color: #ef4444;
+  border-color: #fca5a5;
+}
+
+/* Modificadores de Estado */
+.concluida {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.mensagem-vazia {
+  display: block !important;
+  text-align: center;
+  color: #94a3b8 !important;
+  padding: 25px 10px !important;
+  font-size: 14px;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* ----------------------------------
+   7. Responsividade
+   ---------------------------------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .task-form form {
+    flex-direction: column;
+  }
+
+  .filtros {
+    flex-direction: column;
+  }
+
+  .contadores {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
